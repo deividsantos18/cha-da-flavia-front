@@ -1,7 +1,7 @@
 const form = document.getElementById('formConfirm')
 const msg = document.getElementById('msg')
 
-const BACKEND_URL = 'https://cha-da-flavia-back.railway.app'
+const BACKEND_URL = 'cha-da-flavia-back-production.up.railway.app'
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault()
