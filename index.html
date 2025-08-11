@@ -11,17 +11,21 @@
 
 <body>
     <div class="container">
-        <h1>Confirme sua presença</h1>
+        <h1>Confirme sua presença no chá de bebê do Guilherme</h1>
         <form action="" id="formConfirm">
             <label for="nome">Nome: </label>
             <input type="text" name="nome" id="nome" required>
 
-            <label>Vai comparecer?</label>
-            <label><input type="radio" name="presenca" id="" value="vou"> Vou</label>
-            <label><input type="radio" name="presenca" value="nao-vou" id=""> Não vou</label>
-
-            <label for="presente">Qual presente vai levar?</label>
-            <input type="text" id="presente" name="presente" placeholder="Ex: Fraldas, body, brinquedo..."/>
+            
+            <label for="fralda">Fralda:</label>
+            <select name="fralda" id="fralda" required>
+                <option value="" disabled selected> -- Escolha o tamanho --</option>
+                <option value="P">P</option>
+                <option value="M">M</option>
+            </select>
+            
+            <label for="presente">Qual mimo vai levar? (opcional)</label>
+            <input type="text" id="mimo" name="presente" placeholder="Ex: Ursinho, brinquedo, roupa..."/>
 
             <button type="submit">Confirmar</button>
         </form>

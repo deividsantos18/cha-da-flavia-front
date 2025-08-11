@@ -3,15 +3,16 @@ const msg = document.getElementById('msg')
 
 const BACKEND_URL = 'https://cha-da-flavia-back-production.up.railway.app'
 
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault()
 
     const nome = form.nome.value.trim()
-    const presenca = form.presenca.value
-    const presente = form.presente.value.trim()
+    const fralda = form.fralda.value
+    const mimo = form.mimo.value.trim()
 
-    if(!nome || !presenca) { 
-        msg.textContent = 'Por favor, preencha o nome e a presença.'
+    if(!nome || !fralda) { 
+        msg.textContent = 'Por favor, preencha o nome e o tamanho da fralda.'
         msg.style.color = 'red'
         return
 
@@ -21,12 +22,14 @@ form.addEventListener('submit', async (e) => {
         const res = await fetch(`${BACKEND_URL}/confirmar`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nome, presenca, presente })
+            body: JSON.stringify({ nome, fralda, mimo })
         })
 
         if(res.ok) {
             msg.textContent = 'Presença confirmada, obrigado!'
             msg.style.color = 'green'
+            form.reset()
+            form.nome.focus()
         } else {
             const data = await res.json()
             msg.textContent = data.error || 'Erro ao confirmar.'
