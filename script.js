@@ -28,8 +28,7 @@ form.addEventListener('submit', async (e) => {
         if(res.ok) {
             msg.textContent = 'Presença confirmada, obrigado!'
             msg.style.color = 'green'
-            // form.reset()
-            // form.nome.focus()
+            form.reset()
         } else {
             const data = await res.json()
             msg.textContent = data.error || 'Erro ao confirmar.'
