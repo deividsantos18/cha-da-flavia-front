@@ -51,3 +51,10 @@ button:hover {
     text-align: center;
     font-weight: bold;
 }
+
+#fralda {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    box-sizing: border-box;
+}
